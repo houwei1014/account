@@ -1,0 +1,108 @@
+<ion-view view-title="记账">
+  <ion-content>
+    <div class="button button-calm button-full button-dark" style="margin-top: 20px" ng-click="openDatePicker()">
+      <i class="icon ion-ios-search-strong"></i>
+      账单日期：{{ data.id | date:"yyyy年MM月dd日" }}
+    </div>
+    <ion-slide-box active-slide="myActiveSlide">
+      <ion-slide>
+        <div class="box">
+          <div class="card">
+            <div class="item item-text-wrap text-center item-stable">
+              支出
+            </div>
+          </div>
+          <div class="row row-wrap btn">
+            <div class="col-20 text-center" ng-repeat="row in subclass[0]" ng-click="choose($index, 0)">
+              <div class="button button-outline button-assertive icon {{ row.icon }}"></div>
+              <p>{{ row.expense}}</p>
+            </div>
+          </div>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="box">
+          <div class="card">
+            <div class="item item-text-wrap text-center item-stable">
+              收入
+            </div>
+          </div>
+          <div class="row row-wrap btn">
+            <div class="col-20 text-center" ng-repeat="row in subclass[1]" ng-click="choose($index, 1)">
+              <div class="button button-outline button-balanced icon {{ row.icon }}"></div>
+              <p>{{ row.expense}}</p>
+            </div>
+          </div>
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+    <div class="row">
+      <div class="col-10 text-center" style="font-size: 250%;padding-top: 10px">
+        <i class="icon ion-stats-bars"></i>
+      </div>
+      <div class="col-10 text-center" ng-class="{
+        'universal_1' : data.class == '支出',
+        'universal_1s' : data.class == '收入'
+      }">{{ data.class }}</div>
+      <div class="col-20 text-center universal_2">{{ data.subclass }}</div>
+      <div class="col-60 text-right disc">￥{{ sum }}</div>
+    </div>
+    <div class="row math">
+      <div class="col-25">
+        <div class="button button-dark button-full" ng-click="num(1)">1</div>
+      </div>
+      <div class="col-25">
+        <div class="button button-dark button-full" ng-click="num(2)">2</div>
+      </div>
+      <div class="col-25">
+        <div class="button button-dark button-full" ng-click="num(3)">3</div>
+      </div>
+      <div class="col-25">
+        <div class="button button-stable button-full icon ion-close" ng-click="num('AC')"></div>
+      </div>
+    </div>
+    <div class="row math">
+      <div class="col-25">
+        <div class="button button-dark button-full" ng-click="num(4)">4</div>
+      </div>
+      <div class="col-25">
+        <div class="button button-dark button-full" ng-click="num(5)">5</div>
+      </div>
+      <div class="col-25">
+        <div class="button button-dark button-full" ng-click="num(6)">6</div>
+      </div>
+      <div class="col-25">
+        <div class="button button-assertive button-full icon ion-backspace" ng-click="num('C')"></div>
+      </div>
+    </div>
+    <div class="row math">
+      <div class="col-25">
+        <div class="button button-dark button-full" ng-click="num(7)">7</div>
+      </div>
+      <div class="col-25">
+        <div class="button button-dark button-full" ng-click="num(8)">8</div>
+      </div>
+      <div class="col-25">
+        <div class="button button-dark button-full" ng-click="num(9)">9</div>
+      </div>
+      <div class="col-25">
+        <div class="button button-balanced button-full icon ion-ios-plus-empty" ng-click="num('+')"></div>
+      </div>
+    </div>
+    <div class="row math">
+      <div class="col-25">
+        <div class="button button-dark button-full" ng-click="num('00')">00</div>
+      </div>
+      <div class="col-25">
+        <div class="button button-dark button-full" ng-click="num(0)">0</div>
+      </div>
+      <div class="col-25">
+        <div class="button button-dark button-full" ng-click="num('.')">.</div>
+      </div>
+      <div class="col-25">
+        <div class="button button-calm button-full" ng-click="num('OK')">OK</div>
+      </div>
+    </div>
+    <!--<pre>{{ data | json}}</pre>-->
+  </ion-content>
+</ion-view>

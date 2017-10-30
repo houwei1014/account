@@ -1,0 +1,26 @@
+<ion-view view-title="明细">
+  <ion-content>
+    <ion-refresher on-refresh="make()"
+                   pulling-text="下拉刷新"></ion-refresher>
+    <div class="list">
+      <div class="item row">
+        <div class="col-20 text-center">当月记账日</div>
+        <div class="col-20 text-center bold">类别</div>
+        <div class="col-20 text-center">收支子类</div>
+        <div class="col-40 text-right">金额</div>
+      </div>
+      <div class="item text-center assertive-bg light account" ng-hide="info.length > 0" ng-click="selectTabWithIndex(0)">
+        记一笔
+        <i class="icon ion-android-add-circle"></i>
+      </div>
+      <div class="item row" ng-repeat="row in info track by $index" ng-click="showConfirm($index)">
+        <div class="col-20 text-center">{{ row.date | date: "yyyy-MM-dd" }}</div>
+        <div class="col-20 text-center" ng-class="{balanced: row.class == '收入', assertive: row.class == '支出'}">{{ row.class }}</div>
+        <div class="col-20 text-center">{{ row.subclass }}</div>
+        <div class="col-40 text-right">
+            <div class="badge badge-assertive" ng-class="{'badge-balanced': row.class == '收入', 'badge-assertive': row.class == '支出'}">{{ row.value | currency: "￥" }}</div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

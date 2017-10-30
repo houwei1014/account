@@ -1,0 +1,29 @@
+<ion-view view-title="报表">
+  <ion-content>
+    <div class="item text-center item_top stable-bg">
+      收入支出统计
+      <ion-spinner icon="lines" class="spinner-assertive"></ion-spinner>
+    </div>
+    <div class="item text-center assertive-bg light account"
+         ng-click="selectTabWithIndex(0)"
+         ng-hide="information.length > 0">
+      <i class="icon ion-edit"></i>
+      暂无数据，记一笔账
+    </div>
+    <div class="button button-full button-assertive"
+         ng-click="showAlert()"
+         ng-show="information.length > 0">立即登录</div>
+    <ion-slide-box class="box_lr" auto-play="true" ng-hide="information.length == 0">
+      <ion-slide>
+        <div class="box">
+          <highchart config="highChartFirst"></highchart>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="box">
+          <highchart config="highChartSecond"></highchart>
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+  </ion-content>
+</ion-view>

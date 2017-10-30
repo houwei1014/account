@@ -1,0 +1,82 @@
+/* Empty. Add your own CSS if you like */
+.box {
+  height: 300px;
+}
+.card {
+  margin: 10px;
+}
+.btn>div>div {
+  border-radius: 8px;
+}
+.btn>div>p {
+  margin: 18px 0;
+}
+.math {
+  padding: 0 5px;
+}
+.math>div>div.button.button-full {
+  margin: 0;
+  border: 1px solid #fff;
+}
+.disc {
+  font-size: 250%;
+  padding: 18px 10px;
+}
+.universal_1 {
+  font-size: 120%;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #FD6478;
+}
+.universal_1s {
+  font-size: 120%;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #33CD5F;
+}
+.universal_2 {
+  font-size: 120%;
+  margin-top: 20px;
+  font-weight: bold;
+}
+.item>div {
+  padding: 8px 0;
+}
+.item .badge {
+  top: 10px;
+  right: 5px;
+}
+.account {
+  font-family: Impact;
+  font-size: 150%;
+}
+highchart {
+  display: block;
+  width: 405px;
+  height: 545px;
+  margin: 5px;
+}
+highchart>div>svg>text {
+  display: none;
+}
+.item_top {
+  font-family: Impact;
+  font-size: 150%;
+  padding: 10px;
+}
+.spinner svg {
+  position: absolute;
+  top: 8px;
+}
+.box_lr {
+  height: 545px;
+}
+.box_lr .slider-pager {
+  display: none;
+}
+.scroll>div:nth-child(3).button-full{
+  margin: 0;
+}
+
+
+
